@@ -1,0 +1,13 @@
+<h2>Create User</h2>
+ <?php
+ $form->setAttribute('action', $this->url('user', array('action' => 'create')));
+ $form->prepare();
+
+ echo $this->form()->openTag($form);
+ echo $this->formHidden($form->get('id'));
+ echo $this->formRow($form->get('name'));
+ echo $this->formRow($form->get('email'));
+ echo $this->formRow($form->get('number'));
+ echo $this->formSubmit($form->get('submit'));
+ echo $this->form()->closeTag();
+ ?>
