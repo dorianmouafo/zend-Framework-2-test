@@ -8,8 +8,6 @@
  */
 
 return array(
-
-
     'controllers' => array(
         'invokables' => array(
             'Application\Controller\Index' => 'Application\Controller\IndexController'
@@ -86,17 +84,18 @@ return array(
         ),
     ),
     
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	'home' => array(
+			'type' => 'Zend\Mvc\Router\Http\Literal',
+				'options' => array(
+				'route' => '/',
+				'defaults' => array(
+				'controller' => 'Application\Controller\Index',
+				'action' => 'index',
+				),
+			),
+    ),
+
+
     'service_manager' => array(
         'abstract_factories' => array(
             'Zend\Cache\Service\StorageCacheAbstractServiceFactory',

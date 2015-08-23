@@ -1,9 +1,23 @@
 <?php
 namespace User;
+
+/**
+ * 
+ * Import for data base link and connection to the model part
+ */
+use User\Model\User;
+use User\Model\UserTable;
+use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\TableGateway\TableGateway;
+
+
+
 use Zend\Mvc\ModuleRouteListener;
 use Zend\Mvc\MvcEvent;
-
-class  Module{
+use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
+use Zend\ModuleManager\Feature\ConfigProviderInterface;
+ 
+class  Module implements AutoloaderProviderInterface, ConfigProviderInterface{
 	
 	//find the configurarion of the module
 	public function getConfig()
@@ -21,5 +35,24 @@ class  Module{
             ),
         );
     }
+	
+	public function getServiceConfig(){
+		
+		return array(
+		     'factories'=>array(
+			       'User\Model\UserTable'=>function($sm){
+			       	$tableuser=$sm->get('UserTableGateway');
+					$table=new UserTable($tableuser);
+					return $table;
+			       },
+			 'UserTableGateway'=> function($sm){
+			       	$dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+					$resultSetPrototype = new ResultSet();
+					$resultSetPrototype->setArrayObjectPrototype(new User());
+					return new TableGateway('users',$dbAdapter,null,$resultSetPrototype);
+			 },
+		   ),
+		);
+	}
 }
 ?>

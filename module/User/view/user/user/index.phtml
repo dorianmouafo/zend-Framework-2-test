@@ -1,23 +1,29 @@
-<h1>index file user</h1>
+<?php 
+$title='List of User';
+
+?>
+<h1><?php echo $this->escapeHtml($title)?></h1>
 <a href="<?php echo $this->url('user',array('controller'=>'user','action'=>'create')); ?>">Create a new User</a>
 
-<table>
+<table class="table">
 		 <tr>
 			 	<th>ID</th>
 				<th>name</th>
 				<th>email</th>
 				<th>Phone Number</th>
+				<th>&nbsp;</th>
+				<th>&nbsp;</th>
 		 </tr>
 <?php 
     foreach ($rowset as $row) {
 ?>
      <tr>
-     	 <td><?php echo $row['id']; ?></td>
-     	 <td><?php echo $row['name']; ?></td>
-     	 <td><?php echo $row['email']; ?></td>
-     	 <td><?php echo $row['phone_number']; ?></td>
-     	 <td><a href="<?php echo $this->url('user',array('controller'=>'user','action'=>'update','id'=>$row['id'])); ?>">Update</a>--</td>
-     	 <td><a href="<?php echo $this->url('user',array('controller'=>'user','action'=>'delete','id'=>$row['id'])); ?>" onclick="return ('Do you rely want to delete')">Delete</a></td>
+     	 <td><?php echo $this->escapeHtml($row->id);?></td>
+     	 <td><?php echo $this->escapeHtml($row->name);?></td>
+     	 <td><?php echo $this->escapeHtml($row->email);?></td>
+     	 <td><?php echo $this->escapeHtml($row->number);?></td>
+     	 <td><a href="<?php echo $this->url('user',array('controller'=>'user','action'=>'update','id'=>$row->id)); ?>">Update</a></td>
+     	 <td><a href="<?php echo $this->url('user',array('controller'=>'user','action'=>'delete','id'=>$row->id)); ?>" onclick="return ('Do you rely want to delete')">Delete</a></td>
      </tr>
 <?php      
     }

@@ -8,7 +8,7 @@ class UserFrom extends Form{
      {
          // we want to ignore the name passed
          parent::__construct('user');
-
+         $this->setAttribute('method', 'post');
          $this->add(array(
              'name' => 'id',
              'type' => 'Hidden',
@@ -27,7 +27,6 @@ class UserFrom extends Form{
                  'label' => 'Email:',
              ),
          ));
-		 
 		 $this->add(array(
              'name' => 'number',
              'type' => 'Text',
@@ -35,7 +34,6 @@ class UserFrom extends Form{
                  'label' => 'Phone Number:',
              ),
          ));
-		 
          $this->add(array(
              'name' => 'submit',
              'type' => 'Submit',
