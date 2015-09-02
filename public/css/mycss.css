@@ -30,6 +30,80 @@
 .selection{
 	 padding: 10px 40px 40px 40px;
 	 background-color:#A6E1EC;
-	 box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.3);
+	 box-shadow: 7px 5px 5px rgba(0, 0, 0, 0.3);	
+}
+
+/******************************   down Menu  ****/
+
+.menu-down{
+	padding: 0px 0px 40px 40px;
+	margin:0px auto;
+	background-color:#398439;	
+	position:float;
+	
+}
+
+.wrapper-menu{
+	margin: 0;
+	padding: 0;
+	
+
+}
+.navMenu-menu ul{
+	margin:0;
+	padding:0;
+	line-height:30px;
+	
+}
+
+.navMenu-menu li{
+	margin:0;
+	padding: 0;
+	list-style:none;
+	float:left;
+	position: relative;	
+	background-color:#398439;	
+}
+
+.navMenu-menu ul li a {
+	text-align:center;
+	text-decoration:none;
+	width:150px;
+	height: 30px;
+	display: block;
+	color:#FFFFFF;
+	font-size:14px;
+	border:1px solid #FFFFFF;
+
+}
+
+.navMenu-menu ul ul {
+	position:absolute;
+	visibility:hidden;
+	top:30px;
+}
+.navMenu-menu ul li:hover ul {
+	visibility:visible;
+}
+
+.navMenu-menu li:hover{
+	background-color:#000000;
+	color:#000000;	
+	
+}
+
+.navMenu-menu ul li:hover ul li a:hover{
+	background-color:#46B8DA;
+	
+}
+
+/************************************** TAble*************************/
+.table th{
+	background-color:#999999;
+	color:#FFFFFF;
+	font-size:14px;
+	border: 1px solid #FFFFFF;
+	height: 30px;
+	width:70px;
 	
 }

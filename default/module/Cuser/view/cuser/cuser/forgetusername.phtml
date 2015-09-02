@@ -1,0 +1,29 @@
+<?php echo $this->partial('top.phtml'); ?>
+<div class="row">
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+<div class="account-register">
+<div class="register">
+	
+<form class="form-horizontal" role="form" name="registerform"   data-ng-app="myapp" data-ng-controller="RegisterUser">
+		  <h4 class="text-center title">Forget Username</h4>
+		                     
+								 <div class="form-group">
+								 	<label class="control-label ">Email:</label>
+								 	  <input type="email" name="email" class="form-control" placeholder="Email address" required=""/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label ">Identity Number:</label>
+								 	  <input type="text" name="identifynumber" class="form-control" placeholder="Identified Number" required />
+								 </div>
+								 
+								<div class="form-group">
+								<div class="col-xs-6">
+			<button class="btn btn-info"><span class="glyphicon glyphicon-check"></span> Send request</button>
+							    </div>
+							    </div>
+</form>
+</div>	
+</div>
+</div>	
+</div>

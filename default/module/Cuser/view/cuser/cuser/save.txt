@@ -1,0 +1,26 @@
+<?php echo $this->partial('top.phtml'); ?>
+
+<?php  
+
+$form->setAttribute('action', $this->url('cuser', array('action' => 'adding')));  
+$form->prepare();  
+
+echo $this->form()->openTag($form);
+
+
+echo $this->formHidden($form->get('id'));
+echo $this->formRow($form->get('USER_IDENTITY_TYPT'));
+echo $this->formRow($form->get('USER_IDENTIFY_NUMBER'));
+echo $this->formRow($form->get('USER_NAME'));
+echo $this->formRow($form->get('USER_PHONE_NUMBER'));
+echo $this->formRow($form->get('USER_USERNAME'));
+echo $this->formRow($form->get('USER_PASSWORD'));
+echo $this->formRow($form->get('USER_TYPE_USER'));
+echo $this->formRow($form->get('USER_TYPE_AGENCY'));
+
+
+
+echo $this->formSubmit($form->get('submit'));
+echo $this->form()->closeTag();
+
+?>

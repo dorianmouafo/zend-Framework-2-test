@@ -1,0 +1,76 @@
+<?php echo $this->partial('top.phtml'); ?>
+<div class="row">
+<div class="col-sm-6 col-md-4 col-md-offset-4">
+<div class="account-register">
+<div class="register">
+	
+<form class="form-horizontal" role="form" name="registerform" method="post"     action="" data-ng-app="myapp" data-ng-controller="RegisterUser">
+		  <h4 class="text-center title">Sign  up</h4>
+		                         
+		                         <div class="form-group">
+								 	<label class="control-label">User &nbsp; &nbsp;&nbsp;&nbsp;Type:</label>
+								 	 <select name="USER_TYPE_AGENCY"  data-ng-model="data.selectType">
+								 	 	 <option  value="personal_user">Personal &nbsp;&nbsp;&nbsp;&nbsp;user</option>
+								 	     <option  value="Agency">Agency</option>
+								 	     </select>
+								 </div>
+								 
+		                         <div class="form-group">
+								 	<label class="control-label">Identity Type:</label>
+								 	 <select name="USER_IDENTITY_TYPT"  data-ng-model="data.selectType">
+								 	 	 <option  value="Identity Card">Identity Card</option>
+								 	     <option  value="Passport">Passport</option>
+								 	     <option  value="Student Card">Student Card</option>
+								 	     <option  value="Register Number">Register Number</option>
+								 	     </select>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label ">Identity Number:</label>
+								 	  <input type="text" name="USER_IDENTIFY_NUMBER" class="form-control" placeholder="Identified Number" required />
+								 </div>
+								 <div class="form-group">
+								 	 <label class="control-label">Name</label>
+								 	 <input type="text" name="USER_NAME" class="form-control"   placeholder="Enter your name" required=" its is required"/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	 <label class="control-label">Surname:</label>
+								 	 <input type="text" name="USER_SURNAME" class="form-control" placeholder="Enter your surname" required />
+								 </div>
+								 
+								
+								 <div class="form-group">
+								 	<label class="control-label ">Phone number:</label>
+								 	  <input type="tel" name="USER_PHONE_NUMBER" class="form-control" placeholder="Phone Number" required="please"/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label ">Email:</label>
+								 	  <input type="email" name="USER_EMAIL" class="form-control" placeholder="Email address" required=""/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label">User name:</label>
+								 	  <input type="text" name="USER_USERNAME" class="form-control" placeholder="User Name" required="" />
+								 </div>
+								 
+								  <div class="form-group">
+								 	<label class="control-label">Password:</label>
+								 	  <input type="password" name="USER_PASSWORD" class="form-control" placeholder="Password" required=""/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label">Confirm Password:</label>
+								 	  <input type="password" name="USER_PASSWORD1" class="form-control" placeholder="Password" required=""/>
+								 </div>
+								<div class="form-group">
+								<div class="col-xs-6">
+			      <button class="btn btn-success"><span class="glyphicon glyphicon-saved"></span> Register</button>
+							    </div>
+							    </div>
+</form>
+</div>	
+</div>
+</div>	
+</div>
