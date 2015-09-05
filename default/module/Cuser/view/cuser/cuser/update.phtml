@@ -4,55 +4,68 @@
 <div class="account-register">
 <div class="register">
 	
-<form class="form-horizontal" role="form" name="registerform"   data-ng-app="myapp" data-ng-controller="RegisterUser">
-		  <h4 class="text-center title">Update Information</h4>
-		                         
+<form class="form-horizontal " role="form" name="registerform" method="post"     action="" data-ng-app="myapp" data-ng-controller="RegisterUser"  onsubmit="return user_signup(this);">		  		  
+		       <div class="title">
+		       	      <h4 class="text-center "><?php echo $this->translate('Update Information') ?></h4>
+		       </div>
 		                         <div class="form-group">
-								 	<label class="control-label">User &nbsp; &nbsp;&nbsp;&nbsp;Type:</label>
-								 	 <select name="usertype"  data-ng-model="data.selectType">
-								 	 	 <option  value="personal_user">Personal &nbsp;&nbsp;&nbsp;&nbsp;user</option>
-								 	     <option  value="Agency">Agency</option>
+								 	<label class="control-label"><?php echo $this->translate('User Type:') ?></label>
+								 	 <select class="form-control" name="USER_TYPE_USER"  data-ng-model="data.selectType">
+								 	 	 <option  value="1"> <?php echo $this->translate('Personal user') ?> </option>
+								 	     <option  value="0"><?php echo $this->translate('Agency') ?> </option>
+								 	  </select>
+								 </div>								 
+		                         <div class="form-group">
+								 	<label class="control-label"><?php echo $this->translate('Identity Type:') ?> </label>
+								 	 <select class="form-control" name="USER_IDENTITY_TYPT"  data-ng-model="data.selectType">
+								 	 	 <option  value="Identity Card"><?php echo $this->translate('Identity Card') ?> </option>
+								 	     <option  value="Passport"> <?php echo $this->translate('Passport') ?> </option>
+								 	     <option  value="Student Card"><?php echo $this->translate('Student Card') ?> </option>
 								 	     </select>
 								 </div>
 								 
-		                         <div class="form-group">
-								 	<label class="control-label">Identity Type:</label>
-								 	 <select name="selectType"  data-ng-model="data.selectType">
-								 	 	 <option  value="Identity Card">Identity Card</option>
-								 	     <option  value="Passport">Passport</option>
-								 	     <option  value="Student Card">Student Card</option>
-								 	     <option  value="Register Number">Register Number</option>
-								 	     </select>
+								 <div class="form-group">
+								 	<label class="control-label "><?php echo $this->translate('Identity Number:') ?> </label>
+								 	  <input  title="Please enter the value of indentity number" type="text" name="USER_IDENTIFY_NUMBER" class="form-control" placeholder="Identified Number"  required/>
 								 </div>
 								 
 								 <div class="form-group">
-								 	<label class="control-label ">Identity Number:</label>
-								 	  <input type="text" name="identifynumber" class="form-control" placeholder="Identified Number" required />
-								 </div>
-								 <div class="form-group">
-								 	 <label class="control-label">Name</label>
-								 	 <input type="text" class="form-control"   placeholder="Enter your name" required=" its is required"/>
+								 	 <label class="control-label"><?php echo $this->translate('Name') ?></label>
+								 	 <input title="please enter the value of name" type="text" name="USER_NAME" class="form-control"   placeholder="Enter your name" required=/>
 								 </div>
 								 
 								 <div class="form-group">
-								 	 <label class="control-label">Surname:</label>
-								 	 <input type="text" name="surname" class="form-control" placeholder="Enter your surname" required />
+								 	 <label class="control-label"> <?php echo $this->translate('Surname:') ?> </label>
+								 	 <input title="Please enter the value of Surname" type="text" name="USER_SURNAME" class="form-control" placeholder="Enter your surname" required />
 								 </div>
 								 
 								
 								 <div class="form-group">
-								 	<label class="control-label ">Phone number:</label>
-								 	  <input type="tel" name="phone_number" class="form-control" placeholder="Phone Number" required="please"/>
+								 	<label class="control-label "><?php echo $this->translate('Phone number:') ?></label>
+								 	  <input title="Please enter a correct phone number" type="number" name="USER_PHONE_NUMBER" class="form-control" placeholder="Phone Number" required/>
 								 </div>
 								 
 								 <div class="form-group">
-								 	<label class="control-label ">Email:</label>
-								 	  <input type="email" name="email" class="form-control" placeholder="Email address" required=""/>
+								 	<label class="control-label "><?php echo $this->translate('Email:') ?></label>
+								 	  <input title="Please enter a valide email" type="email" name="USER_EMAIL" class="form-control" placeholder="Email address" required/>
 								 </div>
 								 
+								 <div class="form-group">
+								 	<label class="control-label"><?php echo $this->translate('User name:') ?> </label>
+								 	  <input title="Please enter the value of User name" type="text" name="USER_USERNAME" class="form-control" placeholder="User Name" required />
+								 </div>
+								  <div class="form-group">
+								 	<label class="control-label"><?php echo $this->translate('Password:') ?></label>
+								 	  <input title="Please enter the value of Password" type="password" name="USER_PASSWORD" class="form-control" placeholder="Password" required/>
+								 </div>
+								 
+								 <div class="form-group">
+								 	<label class="control-label"> <?php echo $this->translate('Confirm Password:') ?> </label>
+								 	  <input title="Please the password should be the same" type="password" name="USER_PASSWORD1" class="form-control" placeholder="Password" required/>
+								 </div>
 								<div class="form-group">
 								<div class="col-xs-6">
-			<button class="btn btn-success"><span class="glyphicon glyphicon-refresh"></span> Update</button>
+			      <button class="btn btn-success"><span class="glyphicon glyphicon-saved"></span> <?php echo $this->translate('Register') ?> </button>
 							    </div>
 							    </div>
 </form>

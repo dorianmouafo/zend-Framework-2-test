@@ -27,8 +27,8 @@ class CuserController extends AbstractActionController
 	public function signupAction(){
 		$request = $this->getRequest();
 		$cuse= new Cuser();
+		
 		if($request->isPost()){
-			
 			$data=array(
 		       'USER_IDENTITY_TYPT'=>$this->getRequest()->getPost('USER_IDENTITY_TYPT'),
 		       'USER_IDENTIFY_NUMBER'=>$this->getRequest()->getPost('USER_IDENTIFY_NUMBER'),
@@ -36,15 +36,15 @@ class CuserController extends AbstractActionController
 		       'USER_SURNAME'=>$this->getRequest()->getPost('USER_SURNAME'),
 		       'USER_PHONE_NUMBER'=>$this->getRequest()->getPost('USER_PHONE_NUMBER'),
 		       'USER_EMAIL'=>$this->getRequest()->getPost('USER_EMAIL'),
-		       'USER_USERNAME'=>$this->getRequest()->getPost('USER_USERNAME'), 
+		       'USER_USERNAME'=> md5($this->getRequest()->getPost('USER_USERNAME')) , 
 		       'USER_PASSWORD'=>$this->getRequest()->getPost('USER_PASSWORD'), 
+		       'USER_TYPE_USER'=>$this->getRequest()->getPost('USER_TYPE_USER'),
 		       
-		       'USER_TYPE_USER'=>$this->getRequest()->getPost('USER_TYPE_AGENCY'),
-		       'USER_TYPE_AGENCY'=>$this->getRequest()->getPost('USER_TYPE_AGENCY'),
 		);
+		
 		$cuse->exchangeArray($data);
 		$this->getCuserTable()->saveCuSer($cuse);
-		     return $this->redirect()->toRoute('list');
+		    // return $this->redirect()->toRoute('list');
 		}else{
 		   return new ViewModel();
 		}

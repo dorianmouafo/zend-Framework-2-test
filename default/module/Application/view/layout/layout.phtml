@@ -11,6 +11,7 @@
         <!-- Le styles -->
         <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
                         ->prependStylesheet($this->basePath('css/style.css'))
+						->prependStylesheet($this->basePath('css/pagination.css'))
 						->prependStylesheet($this->basePath('css/mycss.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap-theme.min.css'))
                         ->prependStylesheet($this->basePath('css/bootstrap.min.css')) ?>
@@ -26,9 +27,17 @@
         <!-- Scripts -->
         <?php echo $this->headScript()
             ->prependFile($this->basePath('js/bootstrap.min.js'))
+			->prependFile($this->basePath('js/global_function.js'))
+			->prependFile($this->basePath('js/pagination.js'))
+			->prependFile($this->basePath('js/pagination1.js'))
             ->prependFile($this->basePath('js/jquery.min.js'))
             ->prependFile($this->basePath('js/respond.min.js'), 'text/javascript', array('conditional' => 'lt IE 9',))
             ->prependFile($this->basePath('js/html5shiv.min.js'),   'text/javascript', array('conditional' => 'lt IE 9',))
+        ; ?>
+        
+        <!-- Call javascript for my personal use and control -->
+        <?php echo $this->headScript()
+			->prependFile($this->basePath('js/user/user.js'))
         ; ?>
          
     </head>

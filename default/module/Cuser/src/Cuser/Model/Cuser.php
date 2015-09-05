@@ -23,7 +23,7 @@ class Cuser implements  InputFilterAwareInterface{
 	public $USER_USERNAME ;
 	public $USER_PASSWORD ;
 	public $USER_TYPE_USER ;
-	public $USER_TYPE_AGENCY;
+	//public $USER_TYPE_AGENCY;
 	
 	
 	public function exchangeArray($data)
@@ -38,7 +38,7 @@ class Cuser implements  InputFilterAwareInterface{
 		 $this->USER_USERNAME=(isset($data['USER_USERNAME'])) ?$data['USER_USERNAME'] :null;
 		 $this->USER_PASSWORD=(isset($data['USER_PASSWORD'])) ?$data['USER_PASSWORD'] :null;
 		 $this->USER_TYPE_USER=(isset($data['USER_TYPE_USER'])) ?$data['USER_TYPE_USER'] :null;
-		 $this->USER_TYPE_AGENCY=(isset($data['USER_TYPE_AGENCY'])) ?$data['USER_TYPE_AGENCY'] :null;		
+		// $this->USER_TYPE_AGENCY=(isset($data['USER_TYPE_AGENCY'])) ?$data['USER_TYPE_AGENCY'] :null;		
      }
 
      // Add content to these methods:

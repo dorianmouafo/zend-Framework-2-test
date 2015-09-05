@@ -44,8 +44,8 @@ class CuserTable{
 		       'USER_USERNAME'=>$cuser->USER_USERNAME, 
 		       'USER_PASSWORD'=>$cuser->USER_PASSWORD, 
 		       'USER_TYPE_USER'=>$cuser->USER_TYPE_USER,
-		       'USER_TYPE_AGENCY'=>$cuser->USER_TYPE_AGENCY,
 		);
+		//echo $data;
 		$ID_USER=(int) $cuser->ID_USER;
 		if($ID_USER==0){
 			  $this->tablecuser->insert($data);

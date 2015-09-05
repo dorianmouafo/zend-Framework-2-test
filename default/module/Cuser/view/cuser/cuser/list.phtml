@@ -1,15 +1,36 @@
 <?php echo $this->partial('top.phtml'); ?>
 
-<table class="table">
-		 <tr>
-			 	<th><?php echo $this->translate('TYPE') ?></th>
-				<th><?php echo $this->translate('NUMBER') ?></th>
-				<th><?php echo $this->translate('NAME') ?></th>
-				<th><?php echo $this->translate('SURNAME') ?></th>
-				<th><?php echo $this->translate('PHONE NUMBER') ?></th>
-				<th><?php echo $this->translate('EMAIL') ?></th>
-				<th><?php echo $this->translate('OPERATIONS') ?></th>
-		 </tr>
+<div class="container"   >
+	<table id="tablepagination" class="table table-responsive table-striped table-hover success" data-toggle="table" width="100%">
+		 
+		 <thead>
+			 <tr>
+				 	<th><?php echo $this->translate('TYPE') ?></th>
+					<th><?php echo $this->translate('NUMBER') ?></th>
+					<th><?php echo $this->translate('NAME') ?></th>
+					<th><?php echo $this->translate('SURNAME') ?></th>
+					<th><?php echo $this->translate('PHONE NUMBER') ?></th>
+					<th><?php echo $this->translate('EMAIL') ?></th>
+					<th><?php echo $this->translate('OPERATIONS') ?></th>
+			 </tr>
+		 </thead>
+		 
+		 
+		 <tfoot>
+		 	
+		 	<tr>
+				 	<th><?php echo $this->translate('TYPE') ?></th>
+					<th><?php echo $this->translate('NUMBER') ?></th>
+					<th><?php echo $this->translate('NAME') ?></th>
+					<th><?php echo $this->translate('SURNAME') ?></th>
+					<th><?php echo $this->translate('PHONE NUMBER') ?></th>
+					<th><?php echo $this->translate('EMAIL') ?></th>
+					<th><?php echo $this->translate('OPERATIONS') ?></th>
+			 </tr>
+		 </tfoot>
+		
+		 
+		 
 <?php 
     foreach ($rowset as $row) {
 ?>
@@ -21,10 +42,12 @@
      	 <td><?php echo $this->translate($this->escapeHtml($row->USER_SURNAME));?></td>
      	 <td><?php echo $this->translate($this->escapeHtml($row->USER_PHONE_NUMBER));?></td>
      	 <td><?php echo $this->translate($this->escapeHtml($row->USER_EMAIL));?></td>
-     	 <td><a href="<?php echo $this->url('cuser',array('controller'=>'cuser','action'=>'edit','id'=>$row->ID_USER)); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-plus-sign"></span> Update </button></a>
-     	 <a href="<?php echo $this->url('cuser',array('controller'=>'cuser','action'=>'delete','id'=>$row->ID_USER)); ?>" onclick="return ('Do you rely want to delete')"><button class="btn btn-danger"><span class="glyphicon glyphicon-plus-sign"></span> Delete </button> </a></td>
+     	 <td><a href="<?php echo $this->url('cuser',array('controller'=>'cuser','action'=>'edit','id'=>$row->ID_USER)); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-edit"></span> Update </button></a>
+     	 <a href="<?php echo $this->url('cuser',array('controller'=>'cuser','action'=>'delete','id'=>$row->ID_USER)); ?>" onclick="return ('Do you rely want to delete')"><button class="btn btn-danger"><span class="glyphicon glyphicon-remove-circle"></span> Delete </button> </a></td>
      </tr>
 <?php      
 }
 ?>
 </table>
+	
+</div>
